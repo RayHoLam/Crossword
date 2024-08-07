@@ -43,8 +43,8 @@
             border: 1px solid #000;
             text-align: center;
             vertical-align: middle;
-            height: 20px;
-            width: 20px;
+            height: 30px;
+            width: 30px;
         }
         .button-options {
             display: flex; 
@@ -169,6 +169,11 @@
                 opacity: 1;
             }
         }
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* 将按钮分散到两边 */
+            margin-bottom: 10px; /* 添加底部间距 */
+        }
 
         #open-across{
             right: 0;
@@ -180,7 +185,10 @@
 </head>
 <body>
     <div class="game">        
-        <button class="cta-btn" id="open-across">Across</button>
+        <div class="button-container">
+            <button class="cta-btn" id="open-across">Across</button>
+            <button class="cta-btn" id="open-down">Down</button>
+        </div>
         <div class="modal-container" id="modal-across">
             <div class="modal">
                 <button class="close-btn" id="close-across">X</button>
@@ -206,7 +214,6 @@
             </div>
         </div>
         
-        <button class="cta-btn" id="open-down">Down</button>
         <div class="modal-container" id="modal-down">
             <div class="modal">
                 <button class="close-btn" id="close-down">X</button>
@@ -231,7 +238,7 @@
                 </div>
             </div>
         </div>
-        <svg id="cw" height="100" width="100" style="display:inline-block"></svg>
+        <svg id="cw" height="200" width="200" style="display:inline-block"></svg>
         <table>
             <tr>
                 <td><input type="text" placeholder="1" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
