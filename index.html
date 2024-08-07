@@ -54,14 +54,18 @@
             text-align: center;
             vertical-align: middle;
         }
-        
+        .button-options {
+            display: flex; 
+            justify-content: space-around;
+            margin: 1.25rem 0; 
+        }
         .btn {
             background-color: #F4F5F0;
             color: black;
             border: none;
             display: block;
-            width: 30%;
-            padding: 0.5rem;
+            width: auto;
+            padding: 0.5rem 1rem;
             font-size: 1.00rem;
             font-family: Arial, sans-serif;
             margin: 1.00rem auto;
@@ -73,8 +77,8 @@
             filter: brightness(0.9);
         }
         input {
-            width: 30px;
-            height: 30px;
+            width: 10px;
+            height: 10px;
             text-align: center;
             border: none;
             outline: none;
@@ -114,7 +118,7 @@
     </div>
 
     <div class="game">
-        <svg id="cw" height="300" width="300" style="display:inline-block"></svg>
+        <svg id="cw" height="100" width="100" style="display:inline-block"></svg>
         <table>
             <tr>
                 <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
