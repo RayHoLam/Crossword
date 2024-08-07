@@ -16,14 +16,6 @@
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
         }
-        
-        .container {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            align-items: center;
-        }
-
         .game {
             border-radius: 20px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 1),
@@ -110,7 +102,6 @@
     </style>
 </head>
 <body>
-<div class="container">
     <button class="cta-btn" id="open">Across</button>
     <div class="modal-container" id="modal">
       <div class="modal">
@@ -139,7 +130,45 @@
       </div>
     </div>
 
+    <button class="cta-btn" id="open">Down</button>
+    <div class="modal-container" id="modal">
+      <div class="modal">
+        <button class="close-btn" id="close">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header">
+          <h3>Down</h3>
+        </div>
+        <div class="modal-content">
+            <ul>
+                <li>1 Unthinking, of a reaction (8)</li>
+                <li>2 The amount something can contain (8)</li>
+                <li>4 Serviette (6)</li>
+                <li>5 Small pad of paper for note-taking (10)</li>
+                <li>6 Pinnacle (4)</li>
+                <li>7 Sharp bend – minor difficulty (4)</li>
+                <li>10 Shoots up (10)</li>
+                <li>12 Self-destructively reckless (8)</li>
+                <li>13 Dish of curried rice, eggs and fish (8)</li>
+                <li>16 Unicellular organism (6)</li>
+                <li>18 Muslim leader (4)</li>
+                <li>19 Mark from a wound (4)</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    
     <div class="game">
+        const close = document.getElementById('close');
+        const open = document.getElementById('open');
+        const modal = document.getElementById('modal');
+        open.addEventListener('click', () => modal.classList.add('show-modal'));
+        close.addEventListener('click', () => modal.classList.remove('show-modal'));
+        window.addEventListener('click', e =>
+        e.target == modal ? modal.classList.remove('show-modal') : false
+        );
+        
         <svg id="cw" height="100" width="100" style="display:inline-block"></svg>
         <table>
             <tr>
@@ -350,24 +379,7 @@
         </div>
     </div>
 
-    <div class="down">
-        <h2>Down</h2>
-        <ul>
-            <li>1 Unthinking, of a reaction (8)</li>
-            <li>2 The amount something can contain (8)</li>
-            <li>4 Serviette (6)</li>
-            <li>5 Small pad of paper for note-taking (10)</li>
-            <li>6 Pinnacle (4)</li>
-            <li>7 Sharp bend – minor difficulty (4)</li>
-            <li>10 Shoots up (10)</li>
-            <li>12 Self-destructively reckless (8)</li>
-            <li>13 Dish of curried rice, eggs and fish (8)</li>
-            <li>16 Unicellular organism (6)</li>
-            <li>18 Muslim leader (4)</li>
-            <li>19 Mark from a wound (4)</li>
-        </ul>
-    </div>
-</div>
+
 
 <script>
     function checkCrossword() {
@@ -422,20 +434,6 @@
             }
         });
     });
-
-
-    const close = document.getElementById('close');
-    const open = document.getElementById('open');
-    const modal = document.getElementById('modal');
-
-    open.addEventListener('click', () => modal.classList.add('show-modal'));
-
-    close.addEventListener('click', () => modal.classList.remove('show-modal'));
-
-    window.addEventListener('click', e =>
-        e.target == modal ? modal.classList.remove('show-modal') : false
-                           );
-
 </script>
 
 </body>
