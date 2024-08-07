@@ -10,51 +10,57 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            width:80vh
+            height: 80vh;
+            width: 80vh;
             text-align: center;
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
         }
+        
         .container {
             display: flex;
             align-items: flex-start; 
         }
+        
         .game {
             border-radius: 20px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 1),
                         -4px -4px 10px rgba(255, 255, 255, 0.2);
             background-color: white;
         }
+        
         h2 {
-            margin: 0 20px; 
+            margin: 0 1.25rem; 
         }
+        
         table {
-            margin: 20px auto;
+            margin: 1.25rem auto;
             border-collapse: collapse;
         }
+        
         td {
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
             border: 1px solid #000;
             text-align: center;
             vertical-align: middle;
         }
-        .button-options {
+        
+        .btn {
             background-color: #F4F5F0;
             color: black;
             border: none;
             display: block;
             width: 30%;
-            padding: 10px;
-            font-size: 20px;
+            padding: 0.625rem;
+            font-size: 1.25rem;
             font-family: Arial, sans-serif;
-            margin: 20px auto;
+            margin: 1.25rem auto;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             cursor: pointer;
         }
-        .button-options:hover {
+        .btn:hover {
             filter: brightness(0.9);
         }
         input {
@@ -81,7 +87,7 @@
         }
         h2 {
             text-align: right; 
-            margin-right: 20px; 
+            margin-right: 1.25rem; 
         }
     </style>
 </head>
@@ -231,10 +237,10 @@
             <div id="hint-updown" style="display:inline-block;"></div>
         </div>
         <div class="button-options">
-            <button id="reset" onclick="location.reload()">reset</button>
-            <button id="check-crossword" onclick="checkCrossword()">check crossword</button>
-            <button id="ans" onclick="answer()">answer</button>
-            <button id="clear-ans" onclick="clearAnswer()">clear answer</button>
+            <button id="reset" class="btn" onclick="location.reload()">reset</button>
+            <button id="check-crossword" class="btn" onclick="checkCrossword()">check crossword</button>
+            <button id="ans" class="btn" onclick="answer()">answer</button>
+            <button id="clear-ans" class="btn" onclick="clearAnswer()">clear answer</button>
         </div>
     </div>
     
