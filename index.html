@@ -8,6 +8,7 @@
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             height: 100vh;
             justify-content: center;
             align-items: center;
@@ -21,6 +22,7 @@
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 1),
                         -4px -4px 10px rgba(255, 255, 255, 0.2);
             background-color: white;
+            margin-right: auto; 
         }
         table {
             margin: 20px auto;
@@ -72,11 +74,15 @@
         .incorrect {
             background-color: red;
         }
+        h2 {
+            text-align: right; 
+            margin-right: 20px; 
+        }
     </style>
 </head>
 <body>
 <div class="game">
-<h1>Crossword Puzzle</h1>
+<h1>Crossword</h1>
 
 <svg id="cw" height="300" width="300" style="display:inline-block"></svg>
 
@@ -354,30 +360,28 @@
     }
 
     const inputs = document.querySelectorAll('input');
-inputs.forEach((input, index) => {
-    input.addEventListener('keydown', (event) => {
-        const key = event.key;
+    inputs.forEach((input, index) => {
+        input.addEventListener('keydown', (event) => {
+            const key = event.key;
 
-        // Move right
-        if (key === 'ArrowRight') {
-            event.preventDefault();
-            const nextIndex = index + 1;
-            if (inputs[nextIndex] && !inputs[nextIndex].parentNode.classList.contains('black-cell')) {
-                inputs[nextIndex].focus();
+            // Move right
+            if (key === 'ArrowRight') {
+                event.preventDefault();
+                const nextIndex = index + 1;
+                if (inputs[nextIndex] && !inputs[nextIndex].parentNode.classList.contains('black-cell')) {
+                    inputs[nextIndex].focus();
+                }
             }
-        }
-        // Move left
-        else if (key === 'ArrowLeft') {
-            event.preventDefault();
-            const prevIndex = index - 1;
-            if (inputs[prevIndex] && !inputs[prevIndex].parentNode.classList.contains('black-cell')) {
-                inputs[prevIndex].focus();
+            // Move left
+            else if (key === 'ArrowLeft') {
+                event.preventDefault();
+                const prevIndex = index - 1;
+                if (inputs[prevIndex] && !inputs[prevIndex].parentNode.classList.contains('black-cell')) {
+                    inputs[prevIndex].focus();
+                }
             }
-        }
-        
+        });
     });
-});
-            
 </script>
 
 </body>
