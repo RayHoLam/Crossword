@@ -99,63 +99,65 @@
             font-size: 9px; 
             color: blue;
         }
+        .modal-container {
+            display: none; 
+        }
+        .show-modal {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <button class="cta-btn" id="open">Across</button>
-    <div class="modal-container" id="modal">
-      <div class="modal">
-        <button class="close-btn" id="close">
-          <i class="fa fa-times"></i>
-        </button>
-        <div class="modal-header">
-          <h3>Across</h3>
+    <button class="cta-btn" id="open-across">Across</button>
+    <div class="modal-container" id="modal-across">
+        <div class="modal">
+            <button class="close-btn" id="close-across">X</button>
+            <div class="modal-header">
+                <h3>Across</h3>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>1 Thrill – boot (4)</li>
+                    <li>3 Hiker’s bag (8)</li>
+                    <li>8 Catch sight of (4)</li>
+                    <li>9 He’s an astronaut (8)</li>
+                    <li>11 Cutting tools with folding blades (10)</li>
+                    <li>14 Rejoinder (6)</li>
+                    <li>15 Burning (6)</li>
+                    <li>17 Chatting, perhaps with a view to gaining personal advantage (10)</li>
+                    <li>20 Food fish (8)</li>
+                    <li>21 Equitable (4)</li>
+                    <li>22 Crack shot (8)</li>
+                    <li>23 Simple – pond (4)</li>
+                </ul>
+            </div>
         </div>
-        <div class="modal-content">
-            <ul>
-                <li>1 Thrill – boot (4)</li>
-                <li>3 Hiker’s bag (8)</li>
-                <li>8 Catch sight of (4)</li>
-                <li>9 He’s an astronaut (8)</li>
-                <li>11 Cutting tools with folding blades (10)</li>
-                <li>14 Rejoinder (6)</li>
-                <li>15 Burning (6)</li>
-                <li>17 Chatting, perhaps with a view to gaining personal advantage (10)</li>
-                <li>20 Food fish (8)</li>
-                <li>21 Equitable (4)</li>
-                <li>22 Crack shot (8)</li>
-                <li>23 Simple – pond (4)</li>
-            </ul>
-        </div>
-      </div>
     </div>
-
-    <button class="cta-btn" id="open">Down</button>
-    <div class="modal-container" id="modal">
-      <div class="modal">
-        <button class="close-btn" id="close">
-          <i class="fa fa-times"></i>
-        </button>
-        <div class="modal-header">
-          <h3>Down</h3>
+    
+    <button class="cta-btn" id="open-down">Down</button>
+    <div class="modal-container" id="modal-down">
+        <div class="modal">
+            <button class="close-btn" id="close-down">X</button>
+            <div class="modal-header">
+                <h3>Down</h3>
+            </div>
+            <div class="modal-content">
+                <ul>
+                    <li>1 Unthinking, of a reaction (8)</li>
+                    <li>2 The amount something can contain (8)</li>
+                    <li>4 Serviette (6)</li>
+                    <li>5 Small pad of paper for note-taking (10)</li>
+                    <li>6 Pinnacle (4)</li>
+                    <li>7 Sharp bend – minor difficulty (4)</li>
+                    <li>10 Shoots up (10)</li>
+                    <li>12 Self-destructively reckless (8)</li>
+                    <li>13 Dish of curried rice, eggs and fish (8)</li>
+                    <li>16 Unicellular organism (6)</li>
+                    <li>18 Muslim leader (4)</li>
+                    <li>19 Mark from a wound (4)</li>
+                </ul>
+            </div>
         </div>
-        <div class="modal-content">
-            <ul>
-                <li>1 Unthinking, of a reaction (8)</li>
-                <li>2 The amount something can contain (8)</li>
-                <li>4 Serviette (6)</li>
-                <li>5 Small pad of paper for note-taking (10)</li>
-                <li>6 Pinnacle (4)</li>
-                <li>7 Sharp bend – minor difficulty (4)</li>
-                <li>10 Shoots up (10)</li>
-                <li>12 Self-destructively reckless (8)</li>
-                <li>13 Dish of curried rice, eggs and fish (8)</li>
-                <li>16 Unicellular organism (6)</li>
-                <li>18 Muslim leader (4)</li>
-                <li>19 Mark from a wound (4)</li>
-            </ul>
-        </div>
-      </div>
     </div>
 
     
@@ -373,14 +375,21 @@
 
 
 <script>
-    const close = document.getElementById('close');
-    const open = document.getElementById('open');
-    const modal = document.getElementById('modal');
-    open.addEventListener('click', () => modal.classList.add('show-modal'));
-    close.addEventListener('click', () => modal.classList.remove('show-modal'));
-    window.addEventListener('click', e =>
-        e.target == modal ? modal.classList.remove('show-modal') : false
-                           );
+    // 处理Across模态框
+    const openAcross = document.getElementById('open-across');
+    const closeAcross = document.getElementById('close-across');
+    const modalAcross = document.getElementById('modal-across');
+
+    openAcross.addEventListener('click', () => modalAcross.classList.add('show-modal'));
+    closeAcross.addEventListener('click', () => modalAcross.classList.remove('show-modal'));
+
+    // 处理Down模态框
+    const openDown = document.getElementById('open-down');
+    const closeDown = document.getElementById('close-down');
+    const modalDown = document.getElementById('modal-down');
+
+    openDown.addEventListener('click', () => modalDown.classList.add('show-modal'));
+    closeDown.addEventListener('click', () => modalDown.classList.remove('show-modal'));
     
     function checkCrossword() {
         const answers = ['K', 'I', 'C', 'K', 'K', 'N', 'A', 'P', 'S', 'A', 'C', 'K', 'N' , 'A' , 'A' , 'O' , 'C', 'I', 'E' , 'S' , 'P' , 'Y' , 'S' , 'P' , 'A' , 'C' , 'E' , 'M' , 'A' , 'N' , 'E' , 'A' , 'S' , 'K' , 'K' , 'E' , 'K' , 'J' , 'A' , 'C' , 'K' , 'K' , 'N' , 'I' , 'V' , 'E' , 'S' , 'E' , 'I' , 'Y' , 'N' , 'T' , 'K' , 'K' , 'R' , 'E' , 'T' , 'O' , 'R' , 'T' , 'A' , 'B' , 'L' , 'A' , 'Z' , 'E' , 'K' , 'Y' , 'O' , 'A' , 'O' , 'M' , 'D' , 'S' , 'C' , 'H' , 'M' , 'O' , 'O' , 'Z' , 'I' , 'N' , 'G' , 'I' , 'S' , 'K' , 'O' , 'K' , 'K' , 'E' , 'M' , 'A' , 'C' , 'K' , 'E' , 'R' , 'E' , 'L' , 'F' , 'A' , 'I' , 'R' , 'A' , 'A' , 'T' , 'B' , 'Z' , 'E' , 'M' , 'A' , 'R' , 'K' , 'S' , 'M' , 'A' , 'N' , 'M' , 'E' , 'R' , 'E'];
