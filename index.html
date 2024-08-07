@@ -93,8 +93,27 @@
 </head>
 <body>
 <div class="container">
+    <div class="across">
+        <h2>Across</h2>
+        <ul>
+            <li>1 Thrill – boot (4)</li>
+            <li>3 Hiker’s bag (8)</li>
+            <li>8 Catch sight of (4)</li>
+            <li>9 He’s an astronaut (8)</li>
+            <li>11 Cutting tools with folding blades (10)</li>
+            <li>14 Rejoinder (6)</li>
+            <li>15 Burning (6)</li>
+            <li>17 Chatting, perhaps with a view to gaining personal advantage (10)</li>
+            <li>20 Food fish (8)</li>
+            <li>21 Equitable (4)</li>
+            <li>22 Crack shot (8)</li>
+            <li>23 Simple – pond (4)</li>
+        </ul>
+    </div>
+
     <div class="game">
-        <svg id="cw" height="270" width="270" style="display:inline-block"></svg>
+        <h1>Crossword Puzzle</h1>
+        <svg id="cw" height="300" width="300" style="display:inline-block"></svg>
         <table>
             <tr>
                 <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
@@ -236,46 +255,28 @@
             <div id="hint-updown" style="display:inline-block;"></div>
         </div>
         <div class="button-options">
-            <button id="reset" class="btn" onclick="location.reload()">reset</button>
-            <button id="check-crossword" class="btn" onclick="checkCrossword()">check crossword</button>
-            <button id="ans" class="btn" onclick="answer()">answer</button>
-            <button id="clear-ans" class="btn" onclick="clearAnswer()">clear answer</button>
+            <button id="reset" onclick="location.reload()">reset</button>
+            <button id="check-crossword" onclick="checkCrossword()">check crossword</button>
+            <button id="ans" onclick="answer()">answer</button>
+            <button id="clear-ans" onclick="clearAnswer()">clear answer</button>
         </div>
     </div>
-    
-    <div>
-        <h2>Across</h2>
-        <ul>
-            <li>1	Thrill – boot (4)</li>
-            <li>3	Hiker’s bag (8)</li>
-            <li>8	Catch sight of (4)</li>
-            <li>9	He’s an astronaut (8)</li>
-            <li>11	Cutting tools with folding blades (10)</li>
-            <li>14	Rejoinder (6)</li>
-            <li>15	Burning (6)</li>
-            <li>17	Chatting, perhaps with a view to gaining personal advantage (10)</li>
-            <li>20	Food fish (8)</li>
-            <li>21	Equitable (4)</li>
-            <li>22	Crack shot (8)</li>
-            <li>23	Simple – pond (4)</li>
-        </ul>
-    </div>
 
-    <div>
+    <div class="down">
         <h2>Down</h2>
         <ul>
-            <li>1	Unthinking, of a reaction (8)</li>
-            <li>2	The amount something can contain (8)</li>
-            <li>4	Serviette (6)</li>
-            <li>5	Small pad of paper for note-taking (10)</li>
-            <li>6	Pinnacle (4)</li>
-            <li>7	Sharp bend – minor difficulty (4)</li>
-            <li>10	Shoots up (10)</li>
-            <li>12	Self-destructively reckless (8)</li>
-            <li>13	Dish of curried rice, eggs and fish (8)</li>
-            <li>16	Unicellular organism (6)</li>
-            <li>18	Muslim leader (4)</li>
-            <li>19	Mark from a wound (4)</li>
+            <li>1 Unthinking, of a reaction (8)</li>
+            <li>2 The amount something can contain (8)</li>
+            <li>4 Serviette (6)</li>
+            <li>5 Small pad of paper for note-taking (10)</li>
+            <li>6 Pinnacle (4)</li>
+            <li>7 Sharp bend – minor difficulty (4)</li>
+            <li>10 Shoots up (10)</li>
+            <li>12 Self-destructively reckless (8)</li>
+            <li>13 Dish of curried rice, eggs and fish (8)</li>
+            <li>16 Unicellular organism (6)</li>
+            <li>18 Muslim leader (4)</li>
+            <li>19 Mark from a wound (4)</li>
         </ul>
     </div>
 </div>
