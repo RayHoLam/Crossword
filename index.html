@@ -8,13 +8,16 @@
         body {
             margin: 0;
             display: flex;
-            flex-direction: column;
-            height: 100vh;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             text-align: center;
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start; 
         }
         .game {
             padding: 10px 45px;
@@ -22,7 +25,10 @@
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 1),
                         -4px -4px 10px rgba(255, 255, 255, 0.2);
             background-color: white;
-            margin-right: auto; 
+            margin-right: 20px; 
+        }
+        h2 {
+            margin: 0 20px; 
         }
         table {
             margin: 20px auto;
@@ -81,253 +87,194 @@
     </style>
 </head>
 <body>
-<div class="game">
-<h1>Crossword</h1>
-
-<svg id="cw" height="300" width="300" style="display:inline-block"></svg>
-
-<table>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-    <tr>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td class="black-cell"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-        <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
-    </tr>
-</table>
-
-<div class="hint-dialog">
-    <div id="hint-across" style="display:inline-block;"></div>
-    <div id="hint-updown" style="display:inline-block;"></div>
-</div>
-
-<div class="button-options">
-    <button id="reset" onclick="location.reload()">reset</button>
-    <button id="check-crossword" onclick="checkCrossword()">check crossword</button>
-    <button id="ans" onclick="answer()">answer</button>
-    <button id="clear-ans" onclick="clearAnswer()">clear answer</button>
-</div>
-</div>
+<div class="container">
+    <div class="game">
+        <h1>Crossword Puzzle</h1>
+        <svg id="cw" height="300" width="300" style="display:inline-block"></svg>
+        <table>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td class="black-cell"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td class="black-cell"></td>
+                <td class="black-cell"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+            <tr>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td class="black-cell"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+                <td><input type="text" maxlength="1" pattern="[A-Za-z]" oninput="this.value = this.value.replace(/[^A-Za-z]/g, '');"></td>
+            </tr>
+        </table>
+        <div class="hint-dialog">
+            <div id="hint-across" style="display:inline-block;"></div>
+            <div id="hint-updown" style="display:inline-block;"></div>
+        </div>
+        <div class="button-options">
+            <button id="reset" onclick="location.reload()">reset</button>
+            <button id="check-crossword" onclick="checkCrossword()">check crossword</button>
+            <button id="ans" onclick="answer()">answer</button>
+            <button id="clear-ans" onclick="clearAnswer()">clear answer</button>
+        </div>
+    </div>
     
-<h2>Across</h2>
-<ul>
-    <li>1	Thrill – boot (4)</li>
-    <li>3	Hiker’s bag (8)</li>
-    <li>8	Catch sight of (4)</li>
-    <li>9	He’s an astronaut (8)</li>
-    <li>11	Cutting tools with folding blades (10)</li>
-    <li>14	Rejoinder (6)</li>
-    <li>15	Burning (6)</li>
-    <li>17	Chatting, perhaps with a view to gaining personal advantage (10)</li>
-    <li>20	Food fish (8)</li>
-    <li>21	Equitable (4)</li>
-    <li>22	Crack shot (8)</li>
-    <li>23	Simple – pond (4)</li>
-</ul>
-  
-<h2>Down</h2>
-<ul>
-    <li>1	Unthinking, of a reaction (8)</li>
-    <li>2	The amount something can contain (8)</li>
-    <li>4	Serviette (6)</li>
-    <li>5	Small pad of paper for note-taking (10)</li>
-    <li>6	Pinnacle (4)</li>
-    <li>7	Sharp bend – minor difficulty (4)</li>
-    <li>10	Shoots up (10)</li>
-    <li>12	Self-destructively reckless (8)</li>
-    <li>13	Dish of curried rice, eggs and fish (8)</li>
-    <li>16	Unicellular organism (6)</li>
-    <li>18	Muslim leader (4)</li>
-    <li>19	Mark from a wound (4)</li>
-</ul>
+    <div>
+        <h2>Across</h2>
+        <ul>
+            <li>1	Thrill – boot (4)</li>
+            <li>3	Hiker’s bag (8)</li>
+            <li>8	Catch sight of (4)</li>
+            <li>9	He’s an astronaut (8)</li>
+            <li>11	Cutting tools with folding blades (10)</li>
+            <li>14	Rejoinder (6)</li>
+            <li>15	Burning (6)</li>
+            <li>17	Chatting, perhaps with a view to gaining personal advantage (10)</li>
+            <li>20	Food fish (8)</li>
+            <li>21	Equitable (4)</li>
+            <li>22	Crack shot (8)</li>
+            <li>23	Simple – pond (4)</li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Down</h2>
+        <ul>
+            <li>1	Unthinking, of a reaction (8)</li>
+            <li>2	The amount something can contain (8)</li>
+            <li>4	Serviette (6)</li>
+            <li>5	Small pad of paper for note-taking (10)</li>
+            <li>6	Pinnacle (4)</li>
+            <li>7	Sharp bend – minor difficulty (4)</li>
+            <li>10	Shoots up (10)</li>
+            <li>12	Self-destructively reckless (8)</li>
+            <li>13	Dish of curried rice, eggs and fish (8)</li>
+            <li>16	Unicellular organism (6)</li>
+            <li>18	Muslim leader (4)</li>
+            <li>19	Mark from a wound (4)</li>
+        </ul>
+    </div>
+</div>
 
 <script>
     function checkCrossword() {
