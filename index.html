@@ -159,16 +159,7 @@
     </div>
 
     
-    <div class="game">
-        const close = document.getElementById('close');
-        const open = document.getElementById('open');
-        const modal = document.getElementById('modal');
-        open.addEventListener('click', () => modal.classList.add('show-modal'));
-        close.addEventListener('click', () => modal.classList.remove('show-modal'));
-        window.addEventListener('click', e =>
-        e.target == modal ? modal.classList.remove('show-modal') : false
-        );
-        
+    <div class="game">        
         <svg id="cw" height="100" width="100" style="display:inline-block"></svg>
         <table>
             <tr>
@@ -382,6 +373,15 @@
 
 
 <script>
+    const close = document.getElementById('close');
+    const open = document.getElementById('open');
+    const modal = document.getElementById('modal');
+    open.addEventListener('click', () => modal.classList.add('show-modal'));
+    close.addEventListener('click', () => modal.classList.remove('show-modal'));
+    window.addEventListener('click', e =>
+        e.target == modal ? modal.classList.remove('show-modal') : false
+                           );
+    
     function checkCrossword() {
         const answers = ['K', 'I', 'C', 'K', 'K', 'N', 'A', 'P', 'S', 'A', 'C', 'K', 'N' , 'A' , 'A' , 'O' , 'C', 'I', 'E' , 'S' , 'P' , 'Y' , 'S' , 'P' , 'A' , 'C' , 'E' , 'M' , 'A' , 'N' , 'E' , 'A' , 'S' , 'K' , 'K' , 'E' , 'K' , 'J' , 'A' , 'C' , 'K' , 'K' , 'N' , 'I' , 'V' , 'E' , 'S' , 'E' , 'I' , 'Y' , 'N' , 'T' , 'K' , 'K' , 'R' , 'E' , 'T' , 'O' , 'R' , 'T' , 'A' , 'B' , 'L' , 'A' , 'Z' , 'E' , 'K' , 'Y' , 'O' , 'A' , 'O' , 'M' , 'D' , 'S' , 'C' , 'H' , 'M' , 'O' , 'O' , 'Z' , 'I' , 'N' , 'G' , 'I' , 'S' , 'K' , 'O' , 'K' , 'K' , 'E' , 'M' , 'A' , 'C' , 'K' , 'E' , 'R' , 'E' , 'L' , 'F' , 'A' , 'I' , 'R' , 'A' , 'A' , 'T' , 'B' , 'Z' , 'E' , 'M' , 'A' , 'R' , 'K' , 'S' , 'M' , 'A' , 'N' , 'M' , 'E' , 'R' , 'E'];
         const inputs = document.querySelectorAll('input');
